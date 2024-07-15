@@ -10,7 +10,7 @@ import { parse } from "date-fns";
 export async function getPageOfPosts(
   page: number,
   pageSize: number
-): Promise<Page<PostModel>> {
+): Promise<Page<PostModel>> { 
   const posts = await postRepo.getPosts(page, pageSize);
   const postsCount = await postRepo.countPosts();
 
