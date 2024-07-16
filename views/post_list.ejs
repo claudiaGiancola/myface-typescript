@@ -3,25 +3,36 @@
     <%- include('_header') -%>
 
         <body>
+
             <h1>Posts</h1>
-            <ol>
-                <% postList.results.forEach(function(post) {%>
-                    <li>
-                        <%= post.postedBy.name %>
-                        <%= post.userId %>
-                         <br>
-                         <%= post.message %> <br>
-                         <%= format(post.createdAt, "yyyy-MM-dd HH:mm:ss" ) %> <br>
+
+            <div>
+                <ul class="post-list">
+                    <% postList.results.forEach(function(post) {%>
+                        <li class="posts">
+                            <div class="text username">
+                                <%= post.postedBy.name %>
+                            </div>
+                            <div class="text message">
+                                <%= post.message %>
+                            </div>
+                            <div class="text date">
+                                <%= format(post.createdAt, "yyyy-MM-dd HH:mm:ss" ) %>
+                            </div>
+                            <div class="image-post">
                                 <img src=<%=post.imageUrl%> >
-                    </li>
-                    <% }); %>
-            </ol>
-            <%if (postList.next) { %>
-                <a href="<%= postList.next %>">Next</a>
-            <% } %>
-            <%if (postList.previous) { %>
-                <a href="<%= postList.previous %>">Previous</a>
-            <% } %>
+                            </div>
+                        </li>
+                        <% }); %>
+                </ul>
+                <%if (postList.next) { %>
+                    <a href="<%= postList.next %>">Next</a>
+                    <% } %>
+                        <%if (postList.previous) { %>
+                            <a href="<%= postList.previous %>">Previous</a>
+                            <% } %>
+            </div>
+
         </body>
         <%- include('_footer') -%>
 

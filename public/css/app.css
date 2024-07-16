@@ -1,1 +1,75 @@
 /* Add your styles here. */
+.main-menu {
+    font-size: 5vw;
+    color: rgb(189, 43, 226);
+    background-color: black;
+    padding: 4vw;
+    position: fixed;
+    width: 100vw;
+    height: 6vw;
+    top: 0;
+}
+
+body {
+    
+    background-image: url("https://free-3dtextureshd.com/wp-content/webpc-passthru.php?src=https://free-3dtextureshd.com/wp-content/uploads/2023/10/Grey-White-marble-texture-background-free-download-high-resolution-16-preview-1.jpg&nocache=1");
+    
+    font-family: "Trebuchet MS";
+
+    margin-left: 0;
+    margin-right: 0;
+    
+}
+
+.post-list {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+    gap: 40px;
+
+    margin-block-start: 0;
+    margin-block-end: 0;
+    margin-inline-start: 0;
+    margin-inline-end: 0;
+    padding-inline-start: 0;
+
+    margin: 10px;
+    list-style-type: none;
+
+}
+
+.posts {
+    display: flex;
+    flex-direction: column;
+}
+
+.image-post img {
+    width: 100%;
+}
+
+.username {
+    color: rgb(189, 43, 226);
+    font-weight: bold;
+    font-size: 7vw;
+    align-self: self-start;
+}
+
+.message {
+    font-size: 5vw;
+    flex-grow: 1;
+}
+
+.date {
+    font-size: 3vw;
+    align-self: flex-end;
+}
+
+
+h1 {
+    color: purple;
+    font-size: 8vw;
+    text-align: center;
+    margin-top: 16vw;
+    }
