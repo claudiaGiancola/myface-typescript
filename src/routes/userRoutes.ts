@@ -5,6 +5,7 @@ import { body, validationResult } from "express-validator";
 
 const router = express.Router();
 
+
 router.get("/", async (request, response) => {
   const page = request.query.page ? parseInt(request.query.page as string) : 1;
   const pageSize = request.query.pageSize
@@ -37,6 +38,7 @@ router.post(
     return response.redirect("/users/");
   }
 );
+
 
 router.get("/:userId/", async (request, response) => {
   const userId = parseInt(request.params.userId);

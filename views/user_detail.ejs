@@ -1,8 +1,50 @@
 <html lang="en-gb">
 <%- include('_head') -%>
-<%- include('_header') -%>
+    <%- include('_header') -%>
+
+
 <body>
-<h1><%= name %></h1>
+    <main>
+        
+        <img class="cover-pic" src="https://www.shutterstock.com/image-photo/day-night-time-change-concept-600nw-2116031501.jpg">
+
+        <div class="user-info">
+            <img class="profile-pic" src="https://i.redd.it/15gghew7wc581.jpg">
+            <div>
+            <p id="real-name">
+                <%= name %>
+            </p>
+            <p class="bold-text" id="username">
+                <%= username %>
+            </p>
+            <p class="light-text" id="user-email">
+                <%= email %>
+            </p>
+        </div>
+
+        <div class="User's posts">
+            <ul class="post-list">
+                <% postList.results.forEach(function(post) { %>
+                    <% if (post.postedBy.name == username) { %>
+                    <li class="posts">
+                        <div class="text message">
+                            <%= post.message %>
+                        </div>
+                        <div class="text date">
+                            <%= format(post.createdAt, "yyyy-MM-dd HH:mm:ss" ) %>
+                        </div>
+                        <div class="image-post">
+                            <img src=<%=post.imageUrl%> >
+                        </div>
+                    </li>
+                        <% } %>                        
+                    <% }); %>
+            </ul>
+        </div>
+
+    </main>
+
 </body>
 <%- include('_footer') -%>
+
 </html>

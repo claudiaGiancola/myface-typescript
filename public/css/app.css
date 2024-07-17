@@ -1,8 +1,8 @@
 /* Add your styles here. */
-.main-menu {
+.navbar {
     font-size: 5vw;
-    color: rgb(189, 43, 226);
-    background-color: black;
+    color: pink;
+    /* background-color: black; */
     padding: 4vw;
     position: fixed;
     width: 100vw;
@@ -12,21 +12,32 @@
 
 body {
     
-    background-image: url("https://free-3dtextureshd.com/wp-content/webpc-passthru.php?src=https://free-3dtextureshd.com/wp-content/uploads/2023/10/Grey-White-marble-texture-background-free-download-high-resolution-16-preview-1.jpg&nocache=1");
+    background-color: #252A38;
     
-    font-family: "Trebuchet MS";
+    color: whitesmoke;
+    font-family: "Segoe UI";
+    font-weight: 300;
 
     margin-left: 0;
     margin-right: 0;
     
 }
 
+main {
+    margin: 16vw 0 10vw 0;
+    display: grid;
+    /* grid-template-rows: [cover-pic] 1fr [user-info] 1fr [posts] 1fr [posts-liked] 1fr [posts-disliked] 1fr; */
+    grid-template-rows: 10vh 10vh 10vh 10vh 10vh 50vh;
+    grid-template-columns: 100vw;
+}
+
 .post-list {
 
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
     align-items: stretch;
+    align-content: space-around;
     gap: 40px;
 
     margin-block-start: 0;
@@ -71,5 +82,89 @@ h1 {
     color: purple;
     font-size: 8vw;
     text-align: center;
-    margin-top: 16vw;
+    /* margin-top: 16vw; */
     }
+
+h3 {
+    color: green;
+    font-size: 8vw;
+    text-align: center;
+    /* margin-top: 16vw; */
+}
+
+.bold-text {
+    font-weight: 600;
+}
+
+.light-text {
+    font-weight: 300;
+}
+
+.profile-pic {
+    margin-left: 4vw;
+    border-radius: 50%;
+    width: 15vw;
+    border: thick solid whitesmoke;
+}
+
+.user-info {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 3vw;
+    background-color: rgb(37, 42, 56, 0.6);
+   
+    z-index: 2;
+    /* grid-area: 2 / 1 / 3 / 1; */
+    grid-area: 4 / 1 / 6 / 1;
+}
+
+#real-name {
+    font-size: 24px;
+    margin-bottom: 2vw;
+}
+
+#user-name {
+    font-size: 14px;
+}
+
+#user-email {
+    font-size: 14px;
+}
+
+.cover-pic {
+    width: 100%;
+ 
+    z-index: 1;
+    /* grid-area: 1 / 1 / 4 / 1; */
+    grid-area: 1 / 1 / 2 / 1;
+    /* place-self: center stretch; */
+}
+
+.hamburger-button {
+    color: white;
+    background-color: transparent;
+    font-size: 4vw;
+}
+
+.footer {
+
+    padding: 6vw;
+    border-top: solid whitesmoke;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: stretch;
+    background-color: #151820;
+}
+
+.tech-switch {
+    width: 30vw;
+}
+
+.softwire {
+    width: 20vw;
+    align-self: center;
+}
