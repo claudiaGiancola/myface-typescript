@@ -3,10 +3,12 @@
     <%- include('_header') -%>
 
 <body>
-    <main>
-
+    <main id="post-list">
+        
         <h1>Posts</h1>
-
+        <button id="change-colour">
+            Change colour 
+        </button>
         <div>
             <ul class="post-list">
                 <% postList.results.forEach(function(post) {%>

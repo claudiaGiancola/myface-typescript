@@ -4,7 +4,7 @@
 
 
 <body>
-    <main>
+    <main id="user-detail">
         
         <img class="cover-pic" src="https://www.shutterstock.com/image-photo/day-night-time-change-concept-600nw-2116031501.jpg">
 
@@ -20,26 +20,6 @@
             <p class="light-text" id="user-email">
                 <%= email %>
             </p>
-        </div>
-
-        <div class="User's posts">
-            <ul class="post-list">
-                <% postList.results.forEach(function(post) { %>
-                    <% if (post.postedBy.name == username) { %>
-                    <li class="posts">
-                        <div class="text message">
-                            <%= post.message %>
-                        </div>
-                        <div class="text date">
-                            <%= format(post.createdAt, "yyyy-MM-dd HH:mm:ss" ) %>
-                        </div>
-                        <div class="image-post">
-                            <img src=<%=post.imageUrl%> >
-                        </div>
-                    </li>
-                        <% } %>                        
-                    <% }); %>
-            </ul>
         </div>
 
     </main>
