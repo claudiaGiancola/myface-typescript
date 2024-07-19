@@ -41,7 +41,7 @@ router.post(
 
     await createPost(post as CreatePostRequest);
     return response.redirect("/posts/");
-  }
+    }
 );
 
 router.post("/:postId/like/", async (request, response) => {

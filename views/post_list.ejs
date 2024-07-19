@@ -1,42 +1,58 @@
 <html lang="en-gb">
 <%- include('_head') -%>
-    <%- include('_header') -%>
+<%- include('_header') -%>
 
 <body>
-    <main id="post-list">
-        
-        <h1>Posts</h1>
-        <button id="change-colour">
-            Change colour 
-        </button>
-        <div>
-            <ul class="post-list">
-                <% postList.results.forEach(function(post) {%>
-                    <li class="posts">
-                        <div class="text username">
-                            <%= post.postedBy.name %>
-                        </div>
-                        <div class="text message">
-                            <%= post.message %>
-                        </div>
-                        <div class="text date">
-                            <%= format(post.createdAt, "yyyy-MM-dd HH:mm:ss" ) %>
-                        </div>
-                        <div class="image-post">
-                            <img src=<%=post.imageUrl%> >
-                        </div>
-                    </li>
-                    <% }); %>
-            </ul>
-            <%if (postList.next) { %>
-                <a href="<%= postList.next %>">Next</a>
-                <% } %>
-                    <%if (postList.previous) { %>
-                        <a href="<%= postList.previous %>">Previous</a>
-                        <% } %>
-        </div>
+<main id="post-list">
 
-    </main>
+<h1>Posts</h1>
+<button id="change-colour">
+    Change colour 
+</button>
+<div>
+    <ul class="post-list">
+        <% postList.results.forEach(function(post) {%>
+            <li class="posts">
+                <div class="text username">
+                    <%= post.postedBy.name %>
+                </div>
+                <div class="text message">
+                    <%= post.message %>
+                </div>
+                <div class="text date">
+                    <%= format(post.createdAt, "yyyy-MM-dd HH:mm:ss" ) %>
+                </div>
+                <div class="image-post">
+                    <img src=<%=post.imageUrl%> >
+                </div>
+                <div>
+                    <%= post.likedBy.length %> likes
+                    |
+                    <%= post.dislikedBy.length %> dislikes
+                </div>
+                <form method="post" action="/:<%= post.id %>/like/" >
+                    <button type="submit"> 
+                        Like 
+                    </button>
+                </form>
+                <form method="post" action="/:<%= post.id %>/dislike/" >
+                    <button type="submit">
+                        Dislike
+                    </button>
+                </form>
+            </li>
+            <% }); %>
+    </ul>
+    <%if (postList.next) { %>
+        <a href="<%= postList.next %>">Next</a>
+        <% } %>
+            <%if (postList.previous) { %>
+                <a href="<%= postList.previous %>">Previous</a>
+                <% } %>
+</div>
+
+
+</main>
 </body>
 <%- include('_footer') -%>
 
