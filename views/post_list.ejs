@@ -25,20 +25,22 @@
                 <div class="image-post">
                     <img src=<%=post.imageUrl%> >
                 </div>
+
                 <div>
                     <%= post.likedBy.length %> likes
                     |
                     <%= post.dislikedBy.length %> dislikes
                 </div>
-                <form method="post" action="/:<%= post.id %>/like/" >
+                <form method="post" action="/posts/<%= post.id %>/like/" >
                     <button type="submit"> 
                         Like 
                     </button>
                 </form>
-                <form method="post" action="/:<%= post.id %>/dislike/" >
+                <form method="post" action="/posts/<%= post.id %>/dislike/" >
                     <button type="submit">
                         Dislike
                     </button>
+                    
                 </form>
             </li>
             <% }); %>
